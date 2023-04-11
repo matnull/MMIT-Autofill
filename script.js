@@ -36,34 +36,24 @@ function generateProblemStatement() {
         $("#outText").val(problemStatement);
     }
 }
-    
 
-
-
-function displayRadioValue() {
-    var ele = document.getElementsByName('warrantyType');
-
-    for (i = 0; i < ele.length; i++) {
-        if (ele[i].checked)
-            document.getElementById("result").innerHTML
-                = "Warranty Type: " + ele[i].value;
-    }
-}
-
+// Click event for warranty buttons
 function handleWarrantyButtonClick() {
     $('.warranty-button').removeClass('selected');
     $(this).addClass('selected');
     $(this).find('input').prop('checked', true);
-    displayRadioValue();
+
+    let selectedWarranty = $(this).data("value");
+    let warrantyOutput = "";
+
+    if (selectedWarranty === "ADP") {
+      warrantyOutput = "Warranty Type: ADP<br>**Warranty for phyiscal damage.**";
+    } else if (selectedWarranty === "Customer Limited Warranty") {
+      warrantyOutput = "Warranty Type: Customer Limited Warranty<br>**Make sure to check it dosen't have any physical damage**";
+    }
+
+    $("#result").html(warrantyOutput); // Use .html() instead of .text() to render HTML tags
 }
-
-$(document).ready(function() {
-    $('.chkbx').change(function() {
-        updateSelectedText();
-    });
-
-    $('.warranty-button').click(handleWarrantyButtonClick);
-});
 
 
 function copyToClipboard() {
@@ -86,4 +76,3 @@ $(document).ready(function() {
     // Add event listener for the "Copy Problem Statement" button
     $('#copyButton').click(copyToClipboard);
 });
-

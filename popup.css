@@ -7,8 +7,9 @@ body, h1, h3, h4, div, input {
 
 /* Set body background color and font */
 body {
-    background-color: #f8f8f8;
+    background-color: #f0f0f0; /* Change background color */
     font-family: Arial, sans-serif;
+    color: #333; /* Change text color */
 
     /* make sure all the content is able to fit inside the body */
     min-width: 500px;
@@ -22,13 +23,13 @@ body {
     padding: 20px;
 }
 
-
 /* Style title */
 h1 {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
+    color: #f78b1f; /* Change title color */
 }
 
 .warranty-button {
@@ -50,20 +51,18 @@ h1 {
     color: white;
 }
 
-
-
 /* Style subtitle */
 h3 {
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #444; /* Change subtitle color */
 }
 
 /* Style radio buttons */
 input[type="radio"] {
     margin-right: 2px;
 }
-
 
 .chkbx {
     margin-bottom: 5px; /* Update this value to adjust the spacing */
@@ -80,7 +79,6 @@ button {
     border-radius: 20px;
 }
 
-
 /* Style output textareas */
 #outText, #scriptOutput {
     width: 50%;
@@ -88,6 +86,8 @@ button {
     margin-top: 10px;
     padding: 5px;
     resize: none;
+    background-color: #f8f8f8; /* Change textarea background color */
+    color: #333; /* Change textarea text color */
 }
 
 .problemStatement{
