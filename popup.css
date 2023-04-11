@@ -2,7 +2,6 @@
 body, h1, h3, h4, div, input {
     margin: 5px;
     padding: 5px;
-    min-width: 100px;
 }
 
 /* Set body background color and font */
@@ -91,7 +90,6 @@ button {
   }
   
   .column {
-    flex: 1 0 45%; /* adjust the width as needed */
     margin-right: 5%;
   }
   
@@ -104,6 +102,11 @@ button {
       flex: 1 0 100%;
       margin-right: 0;
     }
+  }
+  p{
+    /* make bold */
+    font-weight: bold;
+    color: #6a6a6a;
   }
   
 

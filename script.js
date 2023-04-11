@@ -48,9 +48,11 @@ function handleWarrantyButtonClick() {
     let warrantyOutput = "";
 
     if (selectedWarranty === "ADP") {
-      warrantyOutput = "Warranty Type: ADP<br>**Warranty for phyiscal damage.**";
+      warrantyOutput = 
+      "Warranty Type: ADP<br><br>**Warranty for phyiscal damage.**";
     } else if (selectedWarranty === "Customer Limited Warranty") {
-      warrantyOutput = "Warranty Type: Customer Limited Warranty<br>**Make sure to check it dosen't have any physical damage**";
+      warrantyOutput = 
+      "Warranty Type: Customer Limited Warranty<br><br>**Make sure to check it dosen't have any physical damage**";
     }
 
     $("#result").html(warrantyOutput); // Use .html() instead of .text() to render HTML tags
