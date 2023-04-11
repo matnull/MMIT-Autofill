@@ -38,6 +38,7 @@ function generateProblemStatement() {
 }
 
 // Click event for warranty buttons
+//TODO ADD lock if customer limited warranty is added
 function handleWarrantyButtonClick() {
     $('.warranty-button').removeClass('selected');
     $(this).addClass('selected');
@@ -66,6 +67,8 @@ function copyToClipboard() {
     $("#confirmationText").text("Problem statement copied to clipboard").fadeIn().delay(3000).fadeOut();
 }
 
+
+//TODO add clear button
 $(document).ready(function() {
     $('.chkbx').change(function() {
         updateSelectedText();
