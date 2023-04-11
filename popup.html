@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval' https://code.jquery.com">
+    <title>MMIT-Autofill</title>
+    <link rel="stylesheet" href="popup.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <!-- TITLE -->
+    <h1>Welcome to MobileMeIT</h1>
+    <div>
+        <!-- choosing warranty -->
+        <div id="warrantySelect">
+            <h4>Type of warranty:</h4>
+            <input type="radio" name="warrantyType" value="ADP" onclick="displayRadioValue()"/> ADP <br />
+            <input type="radio" name="warrantyType" value="Customer Limited Warranty" onclick="displayRadioValue()"/> Customer Limited Warranty <br />
+        </div>
+        <br>
+
+        <div id="result"></div>
+
+        <!-- choosing parts -->
+
+        <div id="partsSelect">
+            <h4>Parts Ordered:</h4><br>
+            <br />
+            <br>
+            <div class="column" id="partsCol">
+                <input type="checkbox" value="LCD" class="chkbx"/> LCD <br />
+                <input type="checkbox" value="LCD Back Cover" class="chkbx"/> LCD Back Cover <br />
+                <input type="checkbox" value="LCD Cable" class="chkbx"/> LCD Cable <br />
+                <input type="checkbox" value="LCD Bezel" class="chkbx"/> LCD Bezel <br />
+                <input type="checkbox" value="LCD Hinge" class="chkbx"/> LCD Hinge <br />
+                <input type="checkbox" value="LCD Hinge Cover" class="chkbx"/> LCD Hinge Cover <br />
+                <input type="checkbox" value="Systemboard" class="chkbx"/> Systemboard <br />
+                <input type="checkbox" value="Click Button Board" class="chkbx"/> Click Button Board <br />
+                <input type="checkbox" value="HDD" class="chkbx"/> HDD <br />
+                <input type="checkbox" value="Trackpad/Glidepoint" class="chkbx"/> Trackpad/Glidepoint <br />
+                <input type="checkbox" value="Trackpad Cable" class="chkbx"/> Trackpad Cable <br />
+                <input type="checkbox" value="Bottom Cover" class="chkbx"/> Bottom Cover <br />
+                <input type="checkbox" value="Palmrest" class="chkbx"/> Palmrest <br />
+                <input type="checkbox" value="Keyboard" class="chkbx"/> Keyboard <br />
+                <input type="checkbox" value="Battery" class="chkbx"/> Battery <br />
+                <input type="checkbox" value="AC Adapter" class="chkbx"/> AC Adapter <br />
+                <input type="checkbox" value="Speaker" class="chkbx"/> Speaker <br />
+                <input type="checkbox" value="Power Button Board" class="chkbx"/> Power Button Board <br />
+                <input type="checkbox" value="Power Button Cable" class="chkbx"/> Power Button Cable <br />
+                <input type="checkbox" value="Camera" class="chkbx"/> Camera <br />
+                <input type="checkbox" value="Camera Cable" class="chkbx"/> Camera Cable <br />
+                <input type="checkbox" value="Power Button" class="chkbx"/> Power Button <br />
+                <input type="checkbox" value="Power Button Cable" class="chkbx"/> Power Button Cable <br />
+                <input type="checkbox" value="Fingerprint Reader" class="chkbx"/> Fingerprint Reader <br />
+                <input type="checkbox" value="Fingerprint Reader Cable" class="chkbx"/> Fingerprint Reader Cable <br />
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+
+        <br>
+
+        <button type="button" onclick="updateSelectedText()">
+            Update Selected Text
+        </button>
+
+        <br>
+
+        <div id="partsSelect2">
+            <h4>Selected Parts (Can edit and add more if needed):</h4>
+            <textarea id="selectedText" rows="5" cols="20"></textarea>
+        </div>
+
+        <br>
+
+        <button type="button" onclick="generateProblemStatement()">
+            Generate!
+        </button>
+
+        <br>
+
+        <div id="problemStatement">
+            <h4>Problem Statement:</h4>
+            <textarea id="outText" rows="5" cols="30" readonly></textarea>
+        </div>
+    </div>
+</body>
+</html>

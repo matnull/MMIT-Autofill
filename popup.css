@@ -1,0 +1,80 @@
+/* Reset default margin and padding */
+body, h1, h3, h4, div, input {
+    margin: 5px;
+    padding: 5px;
+    min-width: 100px;
+}
+
+/* Set body background color and font */
+body {
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+        
+    /* make sure all the content is able to fit inside the body */
+    min-width: 500px;
+    min-height: 500px;
+}
+
+/* Set container width and center align */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* Style title */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Center warrantySelect div */
+#warrantySelect {
+    text-align: left;
+}
+
+
+/* Style subtitle */
+h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style radio buttons */
+input[type="radio"] {
+    margin-right: 2px;
+}
+
+
+.chkbx {
+    margin-bottom: 5px; /* Update this value to adjust the spacing */
+    margin-right: 0px;
+}
+
+/* Style buttons */
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+
+/* Style output textareas */
+#outText, #scriptOutput {
+    width: 50%;
+    height: 100px;
+    margin-top: 10px;
+    padding: 5px;
+    resize: none;
+}
+
+.problemStatement{
+    width: 30vw;
+}
