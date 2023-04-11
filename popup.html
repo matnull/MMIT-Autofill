@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval' https://code.jquery.com">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https://code.jquery.com">
     <title>MMIT-Autofill</title>
     <link rel="stylesheet" href="popup.css">
     <link rel="manifest" href="manifest.json">
@@ -17,9 +17,17 @@
         <!-- choosing warranty -->
         <div id="warrantySelect">
             <h4>Type of warranty:</h4>
-            <input type="radio" name="warrantyType" value="ADP" onclick="displayRadioValue()"/> ADP <br />
-            <input type="radio" name="warrantyType" value="Customer Limited Warranty" onclick="displayRadioValue()"/> Customer Limited Warranty <br />
+            <div class="warranty-button" data-value="ADP">
+                <input type="radio" name="warrantyType" value="ADP" id="adp" hidden/>
+                <label for="adp">ADP</label>
+            </div>
+
+            <div class="warranty-button" data-value="Customer Limited Warranty">
+                <input type="radio" name="warrantyType" value="Customer Limited Warranty" id="clw" hidden/>
+                <label for="clw">Customer Limited Warranty</label>
+            </div>
         </div>
+
         <br>
 
         <div id="result"></div>
@@ -62,11 +70,9 @@
 
         <br>
 
-        <button type="button" onclick="updateSelectedText()">
-            Update Selected Text
-        </button>
 
         <br>
+        <!-- Showing parts on text box -->
 
         <div id="partsSelect2">
             <h4>Selected Parts (Can edit and add more if needed):</h4>
@@ -80,11 +86,20 @@
         </button>
 
         <br>
+        <!-- Problem statment text box -->
 
         <div id="problemStatement">
             <h4>Problem Statement:</h4>
             <textarea id="outText" rows="5" cols="30" readonly></textarea>
         </div>
+
+        
+        <!-- Create button to copy problemStatement text into clipboard -->
+        
+
+        <button type="button" id="copyButton">Copy Problem Statement</button>
+        <p id="confirmationText" style="display:none;"></p>
+
     </div>
 </body>
 </html>

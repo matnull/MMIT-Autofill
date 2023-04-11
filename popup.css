@@ -9,7 +9,7 @@ body, h1, h3, h4, div, input {
 body {
     background-color: #f8f8f8;
     font-family: Arial, sans-serif;
-        
+
     /* make sure all the content is able to fit inside the body */
     min-width: 500px;
     min-height: 500px;
@@ -31,10 +31,25 @@ h1 {
     text-align: center;
 }
 
-/* Center warrantySelect div */
-#warrantySelect {
-    text-align: left;
+.warranty-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 4px;
+    transition: background-color 0.2s;
 }
+
+.warranty-button:hover {
+    background-color: #ddd;
+}
+
+.warranty-button.selected {
+    background-color: #007BFF;
+    color: white;
+}
+
 
 
 /* Style subtitle */

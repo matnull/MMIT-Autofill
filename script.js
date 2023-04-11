@@ -18,17 +18,27 @@ function generateProblemStatement() {
     } else if (warrantyType === "Customer Limited Warranty") {
         problemStatement += "experiencing hardware malfunctions with ";
     }
-    problemStatement += partsNeeded + ". Ordering part(s) to secure integrity of the unit.";
-    $("#outText").val(problemStatement);
-}
 
-function generateScriptOutput() {
-    var problemStatement = $("#outText").val();
-    // Here you can send the problemStatement to ChatGPT for further processing
-    // and display the output in the textarea with id "scriptOutput"
-    var scriptOutput = "Output from ChatGPT: " + problemStatement; // Replace this with actual output from ChatGPT
-    $("#scriptOutput").val(scriptOutput);
+    var partsArray = partsNeeded.split(',');
+    var partsArrayLength = partsArray.length;
+
+    if (partsArrayLength > 1) {
+        var lastPart = partsArray.pop();
+        partsNeeded = partsArray.join(', ') + ', and ' + lastPart;
+    }
+
+    if (partsArrayLength === 1) {
+        problemStatement += partsNeeded + ". Ordering part to secure integrity of the unit.";
+        $("#outText").val(problemStatement);
+    }
+    else if (partsArrayLength > 1){
+        problemStatement += partsNeeded + ". Ordering parts to secure integrity of the unit.";
+        $("#outText").val(problemStatement);
+    }
 }
+    
+
+
 
 function displayRadioValue() {
     var ele = document.getElementsByName('warrantyType');
@@ -40,8 +50,40 @@ function displayRadioValue() {
     }
 }
 
+function handleWarrantyButtonClick() {
+    $('.warranty-button').removeClass('selected');
+    $(this).addClass('selected');
+    $(this).find('input').prop('checked', true);
+    displayRadioValue();
+}
+
 $(document).ready(function() {
     $('.chkbx').change(function() {
         updateSelectedText();
     });
+
+    $('.warranty-button').click(handleWarrantyButtonClick);
 });
+
+
+function copyToClipboard() {
+    var text = $("#outText").val();
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val(text).select();
+    document.execCommand("copy");
+    $temp.remove();
+    $("#confirmationText").text("Problem statement copied to clipboard").fadeIn().delay(3000).fadeOut();
+}
+
+$(document).ready(function() {
+    $('.chkbx').change(function() {
+        updateSelectedText();
+    });
+
+    $('.warranty-button').click(handleWarrantyButtonClick);
+
+    // Add event listener for the "Copy Problem Statement" button
+    $('#copyButton').click(copyToClipboard);
+});
+
