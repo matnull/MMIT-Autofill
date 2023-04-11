@@ -64,11 +64,28 @@ function copyToClipboard() {
     $temp.val(text).select();
     document.execCommand("copy");
     $temp.remove();
-    $("#confirmationText").text("Problem statement copied to clipboard").fadeIn().delay(3000).fadeOut();
+    
+    // Change the button color to green and wait for 2 seconds before changing it back to blue
+    $("#copyButton").css("background-color", "green");
+    setTimeout(function() {
+        $("#copyButton").css("background-color", "");
+    }, 2000);
 }
 
 
-//TODO add clear button
+
+function clearAll() {
+    $('.chkbx').each(function() {
+        $(this).prop('checked', false);
+    });
+    $("#selectedText").val("");
+    $("#outText").val("");
+    $("#result").html("");
+    $('.warranty-button').removeClass('selected');
+}
+
+
+
 $(document).ready(function() {
     $('.chkbx').change(function() {
         updateSelectedText();
