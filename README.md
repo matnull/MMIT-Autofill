@@ -40,3 +40,10 @@ This project is licensed under the MIT License.
 ## Acknowledgments
 
 - jQuery: Used for DOM manipulation and event handling
+
+## Screenshot
+
+<img width="1512" alt="Screenshot 2023-04-11 at 3 47 14 PM" src="https://user-images.githubusercontent.com/90533042/231305039-3603db3d-5b03-4dab-8405-c0407eb74e07.png">
+
+<img width="1512" alt="Screenshot 2023-04-11 at 3 47 25 PM" src="https://user-images.githubusercontent.com/90533042/231305054-e30cceb2-77d6-4d5a-870f-7e3239a3c116.png">
+
